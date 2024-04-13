@@ -1,0 +1,53 @@
+{
+  "name": "useritium-loader",
+  "productName": "Useritium Launcher",
+  "version": "0.1.1",
+  "description": "Loader Useritium",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-builder",
+    "build-linux": "electron-builder --linux"
+  },
+  "build": {
+    "appId": "useritium-app",
+
+    "win": {
+      "target": [
+        "nsis"
+      ],
+      "icon": "logo.ico"
+    },
+    "nsis": {
+      "oneClick": true,
+      "installerIcon": "logo.ico",
+      "uninstallerIcon": "logo.ico",
+      "uninstallDisplayName": "Useritium App",
+      "license": "license.md",
+      "allowToChangeInstallationDirectory": false
+    },
+
+    "linux": {
+      "target": [
+        "deb",
+        "snap",
+        "rpm"
+      ],
+      "category": "Utility"
+    }
+  },
+  "icon": "logo.ico",
+  "author": "Tyrolium",
+  "license": "MIT",
+  "devDependencies": {
+    "electron": "^10.1.5",
+    "electron-builder": "^22.14.13"
+  },
+  "dependencies": {
+    "adm-zip": "^0.5.12",
+    "axios": "^1.6.8",
+    "bootstrap": "^5.3.3",
+    "node-fetch": "^3.3.2",
+    "request": "^2.88.2"
+  }
+}
